@@ -18,18 +18,22 @@ chronological playoff holdout of 1,558 player-games against rolling-average base
 a write-up of a feature that measured +16.3% in testing and was cut for train/serve skew.
 
 **[AttaBot-Sim](https://github.com/eduardo00-fv/AttaBot-Sim)** — *Python, Webots, EKF*
-Simulation ecosystem for the Atta-Bot swarm robotics platform (GIRoM research group, TEC):
-a fast 2D reactive-navigation simulator that ports the firmware behaviour 1:1, a Webots 3D
-physics model with the robots' real dimensions and measured per-unit profiles, a decentralized
-Extended Kalman Filter for pose estimation, and a mock harness that validates controllers
+Simulation ecosystem for the Atta-Bot swarm robotics platform (GIRoM research group, TEC).
+The simulated robots speak the lab's own UDP protocol with byte-identical responses, so the
+real base station cannot tell them from hardware: a 2D simulator that ports the firmware's
+navigation 1:1, a Webots 3D physics model carrying each robot's *measured* calibration
+defects, a decentralized EKF that lets a robot finish a run with no camera (47 mm from goal,
+against a baseline that never arrives), and a mock harness that validates the controllers
 without launching Webots.
 
 **[Atta-Bot](https://github.com/eduardo00-fv/Atta-Bot-P_ed)** — *Python, C++, ROS 2*
 Swarm robotics research platform: low-cost mobile robots with an overhead camera base for
 tracking and position estimation. Work on decentralized state estimation under occlusion.
 
-**[FPGA_Motor_Controller](https://github.com/eduardo00-fv/FPGA_Motor_Controller)** — *Verilog*
-Motor controller implemented on FPGA.
+**[FPGA_Motor_Controller](https://github.com/eduardo00-fv/FPGA_Motor_Controller)** ·
+**[FPGA_Lift](https://github.com/eduardo00-fv/FPGA_Lift)** — *Verilog*
+DC motor speed control from a potentiometer or a resistive sensor through an ADC0808, and a
+five-floor elevator controller with direction-aware request prioritization.
 
 ---
 
